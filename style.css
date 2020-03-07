@@ -1,0 +1,17 @@
+.grid {
+   width: 500px;
+   height: 500px;
+   margin: 0 auto;
+}
+
+#button1, #button2, #button3, #button4 {
+   width: 200px;
+   font-size: 20px;
+   background-color: rgb(75, 2, 75);
+   color: white;
+   text-align: left;
+}
+
+#progress {
+   font-size: 10px;
+}
