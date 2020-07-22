@@ -11,44 +11,31 @@
 </head>
 <body>
 
-    <nav class="navbar fixed-top navbar-light bg-light">
-        
-        <a class="navbar-brand" href="#">View High Scores</a>
+  <nav class="navbar">
+    <button class="btn btn-outline-primary float-left">
+      View High Scores
+    </button>
+    <div class="text-right">Time Left</div>
+  </nav>
 
-      <ul class="nav justify-content-end">
-        </li>
-        <li class="nav-item">
-        
-        </li>
-      </ul>  
-      </nav>
-    </div>
+  <p>
+    Try to answer the following code related question withing the time limit.<br>
+    Keep in mind that incorrect answers will penalize your scoretime<br>
+    by ten seconds!.
+  </p>
+  <button class="btn btn-primary">Start Quiz</button>
       
 
-    <div class="grid">
-        <div id="quiz">
-          
-          <p id="question"></p>
+  <div>
+    <h1>Your Score</h1>
+  </div>
 
-          <div class="buttons">
-              
-                <button id="btn0"><span id="choice0"></span></button>
-                <br>
-                <button id="btn1"><span id="choice1"></span></button>
-                <br>
-                <button id="btn2"><span id="choice2"></span></button>
-                <br>
-                <button id="btn3"><span id="choice3"></span></button>
-                  
-          </div>
-
-          <hr style="margin-top: 50px">
-          <footer>
-              <!--Progress area at bottom of quiz-->
-              <p id="progress">Question x of y</p>
-          </footer>
-        </div></div>
-    </div>
+  <div>
+    <h1>High Scores</h1>
+    <button class="btn btn-primary">Go Back</button>
+    <button class="btn btn-primary">Clear Scores</button>
+  </div>
+    
     
     <script src="app.js"></script>
     
