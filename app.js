@@ -1,3 +1,22 @@
+var startButton = document.getElementById('start-button');
+var submitButton = document.getElementById('submit-button');
+var backButton = document.getElementById('back-button');
+var clearButton = document.getElementById('clear-button');
+
+// page elements
+var homePage = document.getElementById('home-page');
+var questionPage = document.getElementById('question-page');
+var scorePage = document.getElementById('score-page');
+var highscorePage = document.getElementById('highscore-page')
+
+var questionEl = document.getElementById('question');
+var answerEl = document.getElementById('answers');
+var correctEl = document.getElementById('correct');
+var initialsEl = document.getElementById('initials');
+var highscoresEl = document.getElementById('highscores')
+
+
+
 var question1 = {
     question: "Commonly used data types do not include ______.",
     answer1: "strings",
