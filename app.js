@@ -1,7 +1,8 @@
-var startButton = document.getElementById('start-button');
+var startButton = document.querySelector('#start-button');
 var submitButton = document.getElementById('submit-button');
 var backButton = document.getElementById('back-button');
 var clearButton = document.getElementById('clear-button');
+var highscoreButton = document.getElementById('highscore-button')
 
 // page elements
 var homePage = document.getElementById('home-page');
@@ -10,10 +11,12 @@ var scorePage = document.getElementById('score-page');
 var highscorePage = document.getElementById('highscore-page')
 
 var questionEl = document.getElementById('question');
-var answerEl = document.getElementById('answers');
+var answersEl = document.getElementById('answers');
 var correctEl = document.getElementById('correct');
 var initialsEl = document.getElementById('initials');
 var highscoresEl = document.getElementById('highscores')
+var timerEl = document.getElementById('timer')
+var scoreEl = document.getElementById('score')
 
 
 
@@ -65,4 +68,50 @@ var question5 = {
 var questionArray = [question1, question2, question3, question4, question5]
 var questionIndex = 0;
      
+
+
+function startQuiz() {
+    homePage.classList.add('d-none')
+    questionPage.classList.remove('d-none')
+    gameOver = false
+    questionIndex = 0;
+
+    askQuestion()
+}
+
+
+function askQuestion() {
+    answersEl.innerHTML = '';
+    questionEl.textContent = questionArray[questionIndex].question;
+    var answerArray = generateAnswerArray(questionArray[questionIndex]);
+    for (var i = 0; i < answerArray.length; i++) {
+        var answerButton = document.createElement('button')
+        answerButton.textContent = answerArray[i]
+        answerButton.classList.add('btn', 'btn-primary')
+        answersEl.appendChild(answerButton)
+    }
+}
+
+function generateAnswerArray(question) {
+    var answerArray = []
+    answerArray.push(
+        question.answer1,
+        question.answer2,
+        question.answer3,
+        question.answer4,
+        question.rightAnswer
+    )
+    shuffle(answerArray)
+    return answerArray
+}
+
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5)
+}
+
+
+
+startButton.addEventListener('click', startQuiz)
+answersEl.addEventListener('click', checkAnswer)
+
 
