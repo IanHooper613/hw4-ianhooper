@@ -18,6 +18,9 @@ var highscoresEl = document.getElementById('highscores')
 var timerEl = document.getElementById('timer')
 var scoreEl = document.getElementById('score')
 
+var gameOver = false;
+var score;
+var highscoreArray = [];
 
 
 var question1 = {
@@ -68,7 +71,24 @@ var question5 = {
 var questionArray = [question1, question2, question3, question4, question5]
 var questionIndex = 0;
      
+function init() {
+    if(localStorage.getItem('highscores') !== null) {
+        highscoreArray = JSON.parse(localStorage.getItem('highscores'));
+        console.log('1')
+    } else {
+        localStorage.setItem('highscores', JSON.stringify(highscoreArray));
+        console.log('2')
+    }
+}
 
+function viewHighscores() {
+    gameOver = true;
+    homePage.classList.add('d-none');
+    questionPage.classList.add('d-none');
+    scorePage.classList.add('d-none');
+    highscorePage.classList.remove('d-none');
+    renderHighscores();
+}
 
 function startQuiz() {
     homePage.classList.add('d-none')
@@ -76,9 +96,29 @@ function startQuiz() {
     gameOver = false
     questionIndex = 0;
 
-    askQuestion()
+    startClock();
+    askQuestion();
 }
 
+function startClock() {
+    score = 75;
+    timerEl.textContent = score;
+    var timerInterval = setInterval(function() {
+        if(gameOver) {
+            clearInterval(timerInterval);
+        } else if(score <= 0) {
+            gameOver = true;
+            clearInterval(timerInterval);
+            correctEl.textContent = "Time is up";
+            scoreEl.textContent = score;
+            setTimeout(function(){questionPage.classList.add('d-none');
+            scorePage.classList.remove('d-none');},1002)
+        } else {
+            score--;
+            timerEl.textContent = score;
+        }
+    }, 1000)
+}
 
 function askQuestion() {
     answersEl.innerHTML = '';
@@ -100,7 +140,7 @@ function generateAnswerArray(question) {
         question.answer3,
         question.answer4,
         question.rightAnswer
-    )
+    );
     shuffle(answerArray)
     return answerArray
 }
@@ -109,9 +149,51 @@ function shuffle(array) {
     array.sort(() => Math.random() - 0.5)
 }
 
+function checkAnswer(event) {
+    if(event.target.matches('button')) {
+        if(event.target.textContent === questionArray[questionIndex].rightAnswer) {
+            correctEl.textContent = 'Correct';
+            setTimeout(function() {
+                correctEl.textContent = '';
+            }, 1200);
+        } else {
+            if(score >= 15) {
+                score -= 15;
+            } else {
+                score = 0;
+                setTimeout(function() {
+                    questionPage.classList.add('d-none');
+                    scorePage.classList.remove('d-none');
+                }, 1002)
+            }
+            timerEl.textContent = score;
+            correctEl.textContent = 'Wrong';
+            setTimeout(function() {
+                correctEl.textContent = '';
+            }, 1000);
+        }
+        if(questionIndex < questionArray.length - 1) {
+            questionIndex++;
+            askQuestion();
+        } else {
+            gameOver = true;
+            setTimeout(function() {
+                questionPage.classList.add('d-none');
+                scorePage.classList.remove('d-none');
+            }, 1002);
+            scoreEl.textContent = score;
+        }
+    }
+}
 
 
-startButton.addEventListener('click', startQuiz)
-answersEl.addEventListener('click', checkAnswer)
 
 
+
+highscoreButton.addEventListener('click', viewHighscores);
+startButton.addEventListener('click', startQuiz);
+answersEl.addEventListener('click', checkAnswer);
+submitButton.addEventListener('click', submitButton);
+
+
+init();
