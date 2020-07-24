@@ -28,7 +28,6 @@ var question1 = {
     answer1: "strings",
     answer2: "boolians",
     answer3: "alerts",
-    answer4: "numbers",
     rightAnswer: "numbers"
 }
 
@@ -36,7 +35,6 @@ var question2 = {
     question: "The condition in an if / else statement is enclosed within ______.",
     answer1: "quotes",
     answer2: "curly brackets",
-    answer3: "parentheses",
     answer4: "square brackets",
     rightAnswer: "parenthesis"
 }
@@ -46,7 +44,6 @@ var question3 = {
     answer1: "numbers and strings",
     answer2: "other arrays",
     answer3: "boolians",
-    answer4: "all of the above",
     rightAnswer: "all of the above"
 }
 
@@ -54,7 +51,6 @@ var question4 = {
     question: "String values must be enclosed within _____ when being assigned variables.",
     answer1: "commas",
     answer2: "curly brackets",
-    answer3: "quotes",
     answer4: "parentheses",
     rightAnswer: "quotes"
 }
@@ -64,7 +60,6 @@ var question5 = {
     answer1: "JavaScript",
     answer2: "terminal/bash",
     answer3: "for loops",
-    answer4: "console log",
     rightAnswer: "console log"
 }
 
