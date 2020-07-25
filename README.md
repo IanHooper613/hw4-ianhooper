@@ -1,6 +1,6 @@
 # Code Quiz
 
-An application that quizes users on their knowledge about coding.  The user must complete the quiz before the clock reaches zero.  Any wrong answer decreases the timer by 10 seconds.  Good luck. 
+An application that tests users on their knowledge about coding.  The user must complete the quiz before the clock reaches zero.  Any wrong answer decreases the timer by 10 seconds.  Good luck. 
 
 
 ## Screenshots
@@ -20,5 +20,5 @@ An application that quizes users on their knowledge about coding.  The user must
 <br>
 
 ## Technologies Used
-- HTML and CSS
-- JavaScript
+- [HTML and CSS](https://www.w3schools.com/html/html_css.asp)
+- [JavaScript](https://javascript.info/)
