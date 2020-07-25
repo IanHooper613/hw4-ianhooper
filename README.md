@@ -1,18 +1,24 @@
-# hw4-ianhooper
-Homework 4-Code Quiz
+# Code Quiz
 
-I was presented the challenge of formulating a multiple choice quiz from scratch, that a user could interact with.
-In addition to multiple choice questions, the user would also face time restrictions from a running clock for the quiz.  Based on how well the user did, points would either be added or deducted from their total score, which was presented in the end.  
+An application that quizes users on their knowledge about coding.  The user must complete the quiz before the clock reaches zero.  Any wrong answer decreases the timer by 10 seconds.  Good luck. 
 
 
-Process
+## Screenshots
+<br>
 
-For this application I used the three foundational building blocks of every website-- HTML, CSS, and JavaScript.  
-This application probably could have been made almost with HTML and CSS alone, but it is the JavaScript that makes the application more dynamic.  
+### Main Page
+![image](https://user-images.githubusercontent.com/60622571/88447598-eecead00-ce02-11ea-9b91-7ebe4a0cc35d.png)
+<br>
 
-This application also let us see how Bootstrap continues to be useful on many projects.
+### Question and Choices
+![image](https://user-images.githubusercontent.com/60622571/88447631-5b49ac00-ce03-11ea-9b2e-bedca286b300.png)
+<br>
 
-After re-working my code several times, I was unable to get the application to run in the end.  I feel that I am close to breaking through, and I will continue to work on it until I achieve success.
+### Time's UP!
+![image](https://user-images.githubusercontent.com/60622571/88447646-7f0cf200-ce03-11ea-8293-56daa90ac7ed.png)
+<br>
+<br>
 
-
-Ian Hooper
+## Technologies Used
+- HTML and CSS
+- JavaScript
