@@ -1,6 +1,12 @@
 # Code Quiz
 
 An application that tests users on their knowledge about coding.  The user must complete the quiz before the clock reaches zero.  Any wrong answer decreases the timer by 10 seconds.  Good luck. 
+<br>
+<br>
+
+## Try the Coding Quiz here!
+[Code Quiz](https://ianhooper613.github.io/hw4-ianhooper/)
+
 
 
 ## Screenshots
