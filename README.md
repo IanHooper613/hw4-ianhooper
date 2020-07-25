@@ -4,7 +4,7 @@ An application that tests users on their knowledge about coding.  The user must 
 <br>
 <br>
 
-## Try the Coding Quiz here!
+## Try the Code Quiz here!
 [Code Quiz](https://ianhooper613.github.io/hw4-ianhooper/)
 
 
