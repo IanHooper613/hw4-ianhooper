@@ -181,14 +181,37 @@ function checkAnswer(event) {
     }
 }
 
+function submitScore(event) {
+    event.preventDefault();
+    var newScore = {
+        initials: '',
+        yourScore: ''
+    }
+    newScore.initials = initialsEl.value.toUpperCase();
+    newScore.yourScore = score;
+    highscoreArray.push(newScore);
+    localStorage.setItem('highscores', JSON.stringify(highscoreArray));
+    viewHighscores();
+}
 
+function back(event) {
+    highscorePage.classList.add("d-none");
+    homePage.classList.remove("d-none");
+    highscoreButton.disabled = false;
+  }
 
-
+function clearScores() {
+    highscoreArray = [];
+    localStorage.setItem("highscores", JSON.stringify(highscoreArray));
+    highscoresEL.innerHTML = "";
+  }  
 
 highscoreButton.addEventListener('click', viewHighscores);
 startButton.addEventListener('click', startQuiz);
 answersEl.addEventListener('click', checkAnswer);
 submitButton.addEventListener('click', submitButton);
+backButton.addEventListener("click", back);
+clearButton.addEventListener("click", clearScores);
 
 
 init();
